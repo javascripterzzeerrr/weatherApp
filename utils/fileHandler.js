@@ -13,8 +13,10 @@ exports.writeFileDataFromWifi = (data) => {
     fs.appendFile(filePath, data, () => {
         if (err) {
             console.log(err);
+            return false;
         }
 
         console.log("file was successfully recorded");
+        return true;
     });
 };
