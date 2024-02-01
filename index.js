@@ -11,7 +11,7 @@ app.use(express.favicon()); // отдаем стандартную фавико�
 app.use(express.logger('dev')); // выводим все запросы со статусами в консоль
 app.use(express.bodyParser()); // стандартный модуль, для парсинга JSON в запросах
 app.use(express.static(path.join(__dirname, "public"))); // запуск статического файлового сервера, который смотрит на папку public/ (в нашем случае отдает index.html)
-app.use('api'/ router);
+app.use('api', router);
 
 
 app.listen(PORT, () => console.log(`Express server listening on port ${PORT}}`));
