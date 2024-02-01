@@ -1,3 +1,5 @@
+
+
 class WeatherController {
     async getDataWifi(req, res) {
         try {
