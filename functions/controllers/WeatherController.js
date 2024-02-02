@@ -10,7 +10,7 @@ class WeatherController {
                 res.send({ error: 'Data error' });
             }
 
-            return res.send({ status: 'OK' });
+            return res.send({ status: 'OK', data: res });
         }
         catch(e) {
             console.log(`Error is ${e}`);
