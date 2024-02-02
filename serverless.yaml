@@ -1,0 +1,3 @@
+plugins:
+  - serverless-http # <---- delete this line
+  - serverless-offline
