@@ -26,9 +26,11 @@ exports.writeFileDataFromWifi = (data) => {
 exports.readFileFromWiFi = () => { 
     fs.readFile(filePath, function(error,data){
         if(error) {  // если возникла ошибка
-            return console.log(error);
+            console.log(error);
+        } else {
+            return data.toString();   // возвращаем считанные данные
         }
-        return data.toString();   // возвращаем считанные данные
+        
     });
     console.log("Асинхронное чтение файлов");
 }
