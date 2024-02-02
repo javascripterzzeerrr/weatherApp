@@ -13,7 +13,7 @@ class WeatherController {
             
             readFileData = readFileFromWiFi();
 
-            return res.send({ status: 'OK', data: readFileData });
+            return res.send({ status: 'OK', data: "try data => " + readFileData });
         }
         catch(e) {
             console.log(`Error is ${e}`);
