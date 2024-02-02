@@ -22,7 +22,9 @@ class WeatherController {
 
     async getDataWifiGet(req, res) {
         try {
-            return res.send({ status: 'OK' });
+            readFileData = readFileFromWiFi();
+
+            return res.send({ status: 'OK', data: "try data => " + readFileData });
         }
         catch(e) {
             console.log(`Error is ${e}`);
