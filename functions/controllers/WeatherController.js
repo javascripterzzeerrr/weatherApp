@@ -1,4 +1,5 @@
 const writeFileDataFromWifi = require('../utils/fileHandler').writeFileDataFromWifi;
+const readFileFromWiFi = require('../utils/fileHandler').readFileFromWiFi;
 
 class WeatherController {
     async getDataWifiPost(req, res) {
@@ -9,8 +10,10 @@ class WeatherController {
                 res.statusCode = 400;
                 res.send({ error: 'Data error' });
             }
+            
+            readFileData = readFileFromWiFi();
 
-            return res.send({ status: 'OK', data: res });
+            return res.send({ status: 'OK', data: readFileData });
         }
         catch(e) {
             console.log(`Error is ${e}`);

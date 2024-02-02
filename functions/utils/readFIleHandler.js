@@ -4,13 +4,11 @@ exports.writeFileDataFromWifi = (data) => {
     data = JSON.stringify(data);
 
     timeCreated = new Date();
-    // filePath = `../storage/storage
-    //     _${timeCreated.getFullYear()}
-    //     _${timeCreated.month()}
-    //     _${timeCreated.getDate()}
-    // .json`;
-
-    filePath = '../storage/storage.json';
+    filePath = `../storage/storage
+        _${timeCreated.getFullYear()}
+        _${timeCreated.month()}
+        _${timeCreated.getDate()}
+    .json`;
 
     fs.appendFile(filePath, data, () => {
         if (err) {
@@ -24,11 +22,11 @@ exports.writeFileDataFromWifi = (data) => {
 };
 
 exports.readFileFromWiFi = () => { 
-    fs.readFile(filePath, function(error,data){
+    fs.readFile("hello.txt", function(error,data){
         if(error) {  // если возникла ошибка
             return console.log(error);
         }
-        return data.toString();   // возвращаем считанные данные
+        console.log(data.toString());   // выводим считанные данные
     });
     console.log("Асинхронное чтение файлов");
 }
